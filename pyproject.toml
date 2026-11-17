@@ -1,0 +1,17 @@
+[project]
+name = "google-speech-commands"
+version = "0.1.0"
+description = "A model to classify spoken keyword from a one second audio clip."
+readme = "README.md"
+authors = [
+    { name = "MattrHermanson", email = "matth2004@outlook.com" }
+]
+requires-python = ">=3.15"
+dependencies = []
+
+[project.scripts]
+google-speech-commands = "google_speech_commands:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
