@@ -7,7 +7,7 @@ authors = [
     { name = "MattrHermanson", email = "matth2004@outlook.com" }
 ]
 requires-python = ">=3.15"
-dependencies = []
+dependencies = ["torch"]
 
 [project.scripts]
 google-speech-commands = "google_speech_commands:main"
@@ -15,3 +15,26 @@ google-speech-commands = "google_speech_commands:main"
 [build-system]
 requires = ["uv_build>=0.13.5,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
+ignore = ["D107", "B024", "S311"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
+
+[tool.pyright]
+include = ["src"]
+typeCheckingMode = "standard"
+venv = ".venv"
