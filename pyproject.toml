@@ -7,10 +7,11 @@ authors = [
     { name = "MattrHermanson", email = "matth2004@outlook.com" }
 ]
 requires-python = ">=3.15"
-dependencies = ["torch"]
+dependencies = ["torch", "numpy", "tensorboard", "torchmetrics"]
 
 [project.scripts]
-google-speech-commands = "google_speech_commands:main"
+main = "google_speech_commands.main:main"
+tb = "google_speech_commands.utils:launch_tb"
 
 [build-system]
 requires = ["uv_build>=0.13.5,<0.14.0"]
@@ -18,7 +19,7 @@ build-backend = "uv_build"
 
 [tool.ruff]
 line-length = 100
-src = ["src", "tests"]
+src = ["src"]
 
 [tool.ruff.lint]
 select = ["E9", "F63", "F7", "F82"]
